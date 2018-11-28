@@ -22,7 +22,7 @@ wget https://git.io/vpn -O openvpn-install.sh && expect -f automate-road-warrior
 # Update openvpn version to latest 2.4 stable for Ubuntu 16
 
 wget -O - https://swupdate.openvpn.net/repos/repo-public.gpg|apt-key add -
-apt-get install openvpn
+yes|apt-get install openvpn
 
 cp server.conf /etc/openvpn/server.conf
 
