@@ -43,7 +43,7 @@ if {$force_conservative} {
 
 
 set timeout -1
-spawn bash openvpn-install.sh
+spawn bash ../openvpn-install.sh
 match_max 100000
 expect "*"
 send -- "\r"
@@ -64,17 +64,9 @@ expect -exact "\r
 What port do you want OpenVPN listening to?\r
 Port: 1194"
 send -- "\r"
-expect -exact "\r
-\r
-Which DNS do you want to use with the VPN?\r
-   1) Current system resolvers\r
-   2) 1.1.1.1\r
-   3) Google\r
-   4) OpenDNS\r
-   5) Verisign\r
-DNS \[1-5\]: 1"
+expect "*"
 send -- ""
-expect -exact [K"
+expect "*"
 send -- "2\r"
 expect -exact "2\r
 \r
