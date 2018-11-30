@@ -28,5 +28,8 @@ yes|apt-get install openvpn
 # Update server config
 cp server.conf /etc/openvpn/server.conf
 
+# Add pam plugin which is a little squirrelly 
+echo "plugin $(dpkg -L openvpn | grep '\bpam\b'|head -n 1) \"login login USERNAME password PASSWORD\"" >> /etc/openvpn/server.conf
+
 # Restart and you're golden
 /etc/init.d/openvpn restart
