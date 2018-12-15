@@ -33,3 +33,5 @@ echo "plugin $(dpkg -L openvpn | grep '\bpam\b'|head -n 1) \"login login USERNAM
 
 # Restart and you're golden
 /etc/init.d/openvpn restart
+
+systemctl enable openvpn
