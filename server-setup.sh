@@ -29,5 +29,9 @@ yes|apt-get install openvpn
 cp server.conf /etc/openvpn/server/server-1194.conf
 
 systemctl stop openvpn
+
+# make sure of it
+killall /usr/sbin/openvpn
+
 systemctl enable openvpn-server@server-1194.service
 systemctl start openvpn-server@server-1194.service
